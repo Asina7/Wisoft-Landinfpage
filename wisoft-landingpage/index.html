@@ -1,0 +1,1107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Wisoft Solutions</title>
+	<link rel="icon" 
+      type="image/png" 
+      href="images/favicon.png">
+	<link href="css/bootstrap.css" rel="stylesheet">
+	<link href="css/style.css" rel="stylesheet">
+	<link href="css/slick.css" rel="stylesheet">
+	<link href="css/fontawesome/css/all.css" rel="stylesheet">
+	<link rel="stylesheet" href="css/jquery.fancybox.css">
+	<link href="css/responsive.css" rel="stylesheet">
+	<link href="css/gotham/stylesheet.css" rel="stylesheet">
+
+	<style>
+		html,body{
+			margin: 0px;
+		}
+		#crmWebToEntityForm.zcwf_lblLeft {
+			width:100%;
+			padding: 25px;
+			margin: 0 auto;
+			box-sizing: border-box;
+		}
+		.input-cls{
+			border-radius: 10px;
+		}
+		#crmWebToEntityForm.zcwf_lblLeft * {
+			box-sizing: border-box;
+			border-radius: 10px;
+			margin-left: 0px;
+		}
+		#crmWebToEntityForm{text-align: left;}
+		#crmWebToEntityForm * {
+			direction: ltr;
+		}
+		.zcwf_lblLeft .zcwf_title {
+			word-wrap: break-word;
+			padding: 0px 6px 10px;
+			font-weight: bold;
+		}
+		.zcwf_lblLeft .zcwf_col_fld input[type=text], .zcwf_lblLeft .zcwf_col_fld textarea {
+			width: 100%;
+			border: 1px solid #c0c6cc !important;
+			resize: vertical;
+			border-radius: 2px;
+			float: left;
+		}
+		.zcwf_lblLeft .zcwf_col_lab {
+			width: 30%;
+			word-break: break-word;
+			padding: 0px 6px 0px;
+			margin-right: 10px;
+			margin-top: 5px;
+			float: left;
+			min-height: 1px;
+		}
+		.zcwf_lblLeft .zcwf_col_fld {
+			float: left;
+			width: 91%;
+			padding: 0px 6px 0px;
+			position: relative;
+			/* margin-top: 5px; */
+		}
+		.zcwf_lblLeft .zcwf_privacy{padding: 6px;}
+		.zcwf_lblLeft .wfrm_fld_dpNn{display: none;}
+		.dIB{display: inline-block;}
+		.zcwf_lblLeft .zcwf_col_fld_slt {
+			width: 60%;
+			border: 1px solid #ccc;
+			background: #fff;
+			border-radius: 4px;
+			font-size: 12px;
+			float: left;
+			resize: vertical;
+			padding: 2px 5px;
+		}
+		.zcwf_lblLeft .zcwf_row:after, .zcwf_lblLeft .zcwf_col_fld:after {
+			content: '';
+			display: table;
+			clear: both;
+		}
+		.zcwf_lblLeft .zcwf_col_help {
+			float: left;
+			margin-left: 7px;
+			font-size: 12px;
+			max-width: 35%;
+			word-break: break-word;
+		}
+		.zcwf_lblLeft .zcwf_help_icon {
+			cursor: pointer;
+			width: 16px;
+			height: 16px;
+			display: inline-block;
+			background: #fff;
+			border: 1px solid #c0c6cc;
+			color: #c1c1c1;
+			text-align: center;
+			font-size: 11px;
+			line-height: 16px;
+			font-weight: bold;
+			border-radius: 50%;
+		}
+		.zcwf_lblLeft .zcwf_row {margin: 0px 0px;}
+		.zcwf_lblLeft .formsubmit {
+			margin-right: 5px;
+			cursor: pointer;
+			color: var(--baseColor);
+			font-size: 12px;
+		}
+		.zcwf_lblLeft .zcwf_privacy_txt {
+			width: 90%;
+			color: rgb(0, 0, 0);
+			font-size: 12px;
+			font-family: Arial;
+			display: inline-block;
+			vertical-align: top;
+			color: var(--baseColor);
+			padding-top: 2px;
+			margin-left: 6px;
+		}
+		.zcwf_lblLeft .zcwf_button {
+			font-size: 12px;
+			color: var(--baseColor);
+			border: 1px solid #c0c6cc;
+			padding: 3px 9px;
+			border-radius: 4px;
+			cursor: pointer;
+			max-width: 120px;
+			overflow: hidden;
+			text-overflow: ellipsis;
+			white-space: nowrap;
+		}
+		.zcwf_lblLeft .zcwf_tooltip_over{
+			position: relative;
+		}
+		.zcwf_lblLeft .zcwf_tooltip_ctn{
+			position: absolute;
+			background: #dedede;
+			padding: 3px 6px;
+			top: 3px;
+			border-radius: 4px;word-break: break-word;
+			min-width: 100px;
+			max-width: 150px;
+			color: var(--baseColor);
+			z-index: 100;
+		}
+		.zcwf_lblLeft .zcwf_ckbox{
+			float: left;
+		}
+		.zcwf_lblLeft .zcwf_file{
+			width: 55%;
+			box-sizing: border-box;
+			float: left;
+		}
+		.clearB:after{
+			content:'';
+			display: block;
+			clear: both;
+		}
+		.zls-sptwndw {
+			display: none !important;
+		}
+
+		@media all and (max-width: 600px) {
+			.zls-sptwndw {
+			display: none !important;
+		}
+		}
+
+		@media all and (max-width: 600px) {
+			.zcwf_lblLeft .zcwf_col_lab, .zcwf_lblLeft .zcwf_col_fld {
+				width: auto;
+				float: none !important;
+			}
+			.zcwf_lblLeft .zcwf_col_help {width: 40%;}
+		}
+		.zsiq_floatmain{
+			display: none !important;
+		}
+	</style>
+
+  </head>
+  <body>
+ <header class="header">
+ 	<div class="container">
+ 		<div class="row">
+ 			<div class="col-md-12">
+ 				<a class="navbar-brand" href="index.html">
+			  		<img alt="" src="images/logo.svg">
+			  	</a>
+ 			</div>
+ 		</div>
+ 	</div>
+</header>
+<div class="section-home-banner">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-6">
+				<h1>AS A DIGITAL MARKETING AGENCY IN DUBAI,</h1>
+				<h3 class="accent-blue">OUR INSIGHTS AND IDEAS GROW BUSSINESSES ONLINE</h3>
+				<div class="form-wrapper">
+					<div id='crmWebToEntityForm' class='zcwf_lblLeft crmWebToEntityForm' style='background-color: white;color: black;max-width: 600px;'>
+						<meta name='viewport' content='width=device-width, initial-scale=1.0'>
+						 <META HTTP-EQUIV ='content-type' CONTENT='text/html;charset=UTF-8'>
+						 <script src='https://www.google.com/recaptcha/api.js' async defer></script>
+					  <form action='https://crm.zoho.com/crm/WebToLeadForm' name=WebToLeads4937518000014727001 method='POST' onSubmit='javascript:document.charset="UTF-8"; return checkMandatory4937518000014727001()' accept-charset='UTF-8'>
+					   <input type='text' style='display:none;' name='xnQsjsdp' value='1ac4fed805e21d61e630fbc1fde8d510616222c21166f28a676570beb5cbc798'></input> 
+					   <input type='hidden' name='zc_gad' id='zc_gad' value=''></input> 
+					   <input type='text' style='display:none;' name='xmIwtLD' value='4072df857871ae8f9f4ecf7f5b63da4165fefed39553a3837dc9e91c9701d7c4'></input> 
+					   <input type='text'  style='display:none;' name='actionType' value='TGVhZHM='></input>
+					   <input type='text' style='display:none;' name='returnURL' value='https&#x3a;&#x2f;&#x2f;https://www.wisoftsolutions.com'> </input>
+						   <!-- Do not remove this code. -->
+						   <input type='text' style='display:none;' id='ldeskuid' name='ldeskuid'></input>
+						   <input type='text' style='display:none;' id='LDTuvid' name='LDTuvid'></input>
+						   <!-- Do not remove this code. -->
+					
+						<div class='zcwf_title' style='max-width: 600px;color: rgb(63, 63, 201);'>FREE CONSULTATION</div>
+						<!-- bootsrp -->
+						<div class="row">
+							<div class='zcwf_row small-dv'><div class='zcwf_col_lab' style='font-size:12px; font-family: Arial;'><label for='First_Name'>First Name<span style='color:red;'>*</span></label></div><div class='zcwf_col_fld'>
+								<input type='text' id='First_Name'class="form-control" name='First Name' maxlength='40' placeholder="First Name*"></input><div class='zcwf_col_help'></div></div></div>
+							<div class='zcwf_row small-dv'><div class='zcwf_col_lab' style='font-size:12px; font-family: Arial;'><label for='Last_Name'>Last Name<span style='color:red;'>*</span></label></div><div class='zcwf_col_fld'>
+								<input type='text' id='Last_Name' name='Last Name' class="form-control" maxlength='80' placeholder="Last Name*"></input><div class='zcwf_col_help'></div></div></div>
+						</div>
+						<!-- --- -->
+						<div class="row">
+							<div class='zcwf_row small-dv'><div class='zcwf_col_lab' style='font-size:12px; font-family: Arial;'><label for='Email'>Email<span style='color:red;'>*</span></label></div><div class='zcwf_col_fld'><input type='text' class="form-control" ftype='email' id='Email' name='Email' maxlength='100' placeholder="Email*"></input><div class='zcwf_col_help'></div></div></div>
+							<div class='zcwf_row small-dv'><div class='zcwf_col_lab' style='font-size:12px; font-family: Arial;'><label for='Phone'>Phone<span style='color:red;'>*</span></label></div><div class='zcwf_col_fld'><input type='text' id='Phone' name='Phone' class="form-control" maxlength='30' placeholder="Phone*"></input><div class='zcwf_col_help'></div></div></div>
+						</div>
+						<!-- ---- -->
+						<div class="row">
+							<div class='zcwf_row wfrm_fld_dpNn'><div class='zcwf_col_lab' style='font-size:12px; font-family: Arial;'>
+								<label for='Country'>Country</label></div><div class='zcwf_col_fld'>
+									<input type='text' id='Country' name='Country' maxlength='100' placeholder="Country" value='null'>Country</input>
+									<div class='zcwf_col_help'></div>
+								</div>
+								</div>
+								<div class='zcwf_row small-dv'><div class='zcwf_col_lab' style='font-size:12px; font-family: Arial;'><label for='Country'>Country<span style='color:red;'>*</span></label></div><div class='zcwf_col_fld'><input type='text'class="form-control" id='Company' name='Company'  maxlength='200' placeholder="Country"></input><div class='zcwf_col_help'></div></div></div>
+								<div class='zcwf_row small-dv'><div class='zcwf_col_lab' style='font-size:12px; font-family: Arial;'><label for='Company'>Company<span style='color:red;'>*</span></label></div><div class='zcwf_col_fld'><input type='text'class="form-control" id='Company' name='Company'  maxlength='200' placeholder="Company"></input><div class='zcwf_col_help'></div></div></div>
+						</div>
+						
+							<div class='zcwf_row wfrm_fld_dpNn'><div class='zcwf_col_lab' style='font-size:12px; font-family: Arial;'><label for='Lead_Source'>Lead Source</label></div><div class='zcwf_col_fld'><select class='zcwf_col_fld_slt' id='Lead_Source' name='Lead Source'  >
+								<option value='-None-'>-None-</option>
+								<option value='Google'>Google</option>
+								<option value='Facebook'>Facebook</option>
+								<option value='Instagram'>Instagram</option>
+								<option value='Twitter'>Twitter</option>
+								<option value='LinkedIn'>LinkedIn</option>
+							<option selected value='Webform'>Webform</option>
+								<option value='Web&#x20;Chat'>Web Chat</option>
+								<option value='Outdoor'>Outdoor</option>
+								<option value='Sortlist'>Sortlist</option>
+								<option value='BNI&#x20;Chapters'>BNI Chapters</option>
+								<option value='BNI&#x20;Lead'>BNI Lead</option>
+								<option value='Refferals'>Refferals</option>
+								<option value='Telecall'>Telecall</option>
+								<option value='Sales&#x20;Email&#x20;Alias'>Sales Email Alias</option>
+								<option value='Outdoor-Hashmi'>Outdoor-Hashmi</option>
+								<option value='Outdoor&#x20;-&#x20;Maribeth'>Outdoor - Maribeth</option>
+							</select><div class='zcwf_col_help'></div></div></div>
+						
+				
+					 
+					  
+					  <div class='zcwf_row'><div class='zcwf_col_lab' style='font-size:12px; font-family: Arial; color: #787e83;'>Services*<label for='LEADCF23'>Service</label></div><div class='zcwf_col_fld'><select class='zcwf_col_fld_slt' id='LEADCF23' name='LEADCF23' multiple >
+								<label>service*</label> 
+								<option value='Lead&#x20;Generation'>Lead Generation</option>
+								  <option value='Search&#x20;Engine&#x20;Optimization'>Search Engine Optimization</option>
+								  <option value='Social&#x20;Media&#x20;Management'>Social Media Management</option>
+								  <option value='SMS&#x20;Communication'>SMS Communication</option>
+								  <option value='Web&#x20;Design&#x20;and&#x20;Development'>Web Design and Development</option>
+								  <option value='Custom&#x20;App&#x20;Development'>Custom App Development</option>
+								  <option value='Marketing&#x20;Automation'>Marketing Automation</option>
+								  <option value='Pay&#x20;Per&#x20;Click&#x20;Advertising'>Pay Per Click Advertising</option>
+								  <option value='E-Commerce&#x20;Development'>E-Commerce Development</option>
+								  <option value='E-Commerce&#x20;Development'>Content Writing</option>
+								  <option value='WhatsApp&#x20;for&#x20;Business&#x20;Solution'>WhatsApp API for Business</option>
+								  <option value='Other'>Other</option></select><div class='zcwf_col_help'> <span title='To select multiple press CTRL&#x2f;CMD &#x2b; Click' style='cursor: pointer; width: 16px; height: 16px; display: inline-block; background: #fff; border: 1px solid #c0c6cc; color: #c1c1c1; text-align: center; font-size: 11px; line-height: 16px; font-weight: bold; border-radius: 50%;' onclick='tooltipShow4937518000014727001(this)'>?</span><div class='zcwf_tooltip_over' style='display: none;'><span class='zcwf_tooltip_ctn'>To select multiple press CTRL&#x2f;CMD &#x2b; Click</span></div></div></div></div>
+					  <div class='zcwf_row'><div class='zcwf_col_lab' style='font-size:12px; font-family: Arial;'>
+						<label for='Description'>Project Details<span style='color:red;'>*</span></label>
+					</div>
+					<label for='Description'>Project Detail<span style='color:red;'>*</span></label>
+					<div class='zcwf_col_fld'><textarea id='Description' name='Description' placeholder="Project Details"></textarea><div class='zcwf_col_help'></div></div>
+					
+				</div>
+				<div class='zcwf_row'> 
+					<div class='zcwf_col_lab'></div>
+					<div class='zcwf_col_fld'>
+						<!-- <div class='g-recaptcha' data-sitekey='6LfQKiEiAAAAACgo4NlhQ-QA-1yAttMvBqEVq5AV' data-theme='light' data-callback='rccallback4937518000014727001' captcha-verified='false' id='recap4937518000014727001'></div> -->
+						<!-- <div  id='recapErr4937518000014727001' style='font-size:12px;color:red;visibility:hidden;'>Captcha validation failed. If you are not a robot then please try again.</div> -->
+					</div></div>
+						<div class='zcwf_row'>
+							<div class='zcwf_col_lab'></div>
+							<div class='zcwf_col_fld'>
+							<input type='submit' id='formsubmit' class='zcwf_button btn btn-primary'  value='Submit' title='Submit'>
+							<input type='reset' class='zcwf_button btn btn-primary' name='reset' value='Reset' title='Reset'></div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-6 dotted-pattern">
+				<img src="images/banner-right.png" alt="wisoft solutions" class="max-100">
+			</div>
+			
+		</div>
+		
+	</div>
+</div>
+<div class="section-about-us blue-pattern">
+	<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 494.975 494.975">
+	  <rect id="Pattern" width="350" height="350" rx="40" transform="translate(247.487) rotate(45)" fill="#008ccf"/>
+	</svg>
+
+	<div class="container">
+		<div class="row">
+			<div class="col-md-4">
+				<div class="section-header">
+					<span>UAE #1 PERFORMANCE DRIVEN DIGITAL MARKETING AGENCY</span>
+					<h2>GROW ONLINE WITH WISOFT</h2>
+				</div>
+			</div>
+			<div class="col-md-8">
+				<div class="section-caption">
+					<p>Transform your store into a 24x7 sales machine. Maximize communication and performance effectiveness to turn clicks to conversions, and leads to deals with our winning web development solutions. Enhance your store experience, engage global users, expand your market and explore new revenue streams on the digital space without having to depend on human interventions. </p>
+					<p>Jumpstart your digital journey and build your online presence with clean, crisp and creative websites that look good inside-out with clear, professional, and credible content. Get the right expertise to achieve your vision and numbers, as a pioneer with over a decade of experience, Wisoft Solutions is your partner of choice to build sophisticated, premium quality websites worldwide.</p>
+					<p>When the world is just a click away, don’t delay! Digitize your business today.</p>
+					<p></p>
+				</div>
+				<div class="row">
+					<div class="col-md-4">
+						<div class="stats-wrap">
+							<div class="number accent-blue">100+</div>
+							<div class="stat-title">AWESOME<br> WEBSITES</div>
+						</div>
+					</div>
+					<div class="col-md-4">
+						<div class="stats-wrap">
+							<div class="number accent-blue">250+</div>
+							<div class="stat-title">GLOBAL<br> CLIENTS</div>
+						</div>
+					</div>
+					<div class="col-md-4">
+						<div class="stats-wrap">
+							<div class="number accent-blue">100K+</div>
+							<div class="stat-title">LEADS<br> GENERATED</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>	
+	 <!-- <div class="row">
+		<div class="col-md-3"></div>
+		<div class="col-md-9">
+			<div class="projects-carousel">
+				<div class="projects-item">
+					<img src="images/AL-DHANNAH-CS.jpg" alt="Wisoft Solutions" class="max-100"> 
+				
+				</div>
+				<div class="projects-item">
+					<img src="images/APP-PAPERLINE.jpg" alt="Wisoft Solutions" class="max-100"> 
+				</div>
+				<div class="projects-item">
+			
+					<img src="images/APP-sinarmas.jpg" alt="Wisoft Solutions" class="max-100"> 
+				</div>
+				<div class="projects-item">
+				
+					<img src="images/ISUZU CS.jpg" alt="Wisoft Solutions" class="max-100"> 
+				</div>
+				<div class="projects-item">
+					
+					<img src="images/RAKMHSU-CS.jpg" alt="Wisoft Solutions" class="max-100"> 
+				</div>
+				<div class="projects-item">
+					
+					<img src="images/SINARLINE-CS.jpg" alt="Wisoft Solutions" class="max-100"> 
+				</div>
+				<div class="projects-item">
+					
+					<img src="images/WEHBE-CS.jpg" alt="Wisoft Solutions" class="max-100"> 
+				</div>
+			</div>
+		</div>
+	</div>  -->
+</div>
+
+<!-- parallex -->
+
+<div class="col-md-12">
+	<div class="section-caption">
+		
+	</div>
+	
+</div>
+<div class="row">
+	<div class="col-md-12">
+		<div class="section-header text-center">
+			<h2>“Good marketing makes the company look smart. Great marketing makes the customer feel smart.”</h2>
+		</div>
+	</div>
+</div>
+<div class="text-center">
+	<svg xmlns="http://www.w3.org/2000/svg" width="44.799" height="31.624" viewBox="0 0 44.799 31.624">
+	  <g id="Quote_Pattern" data-name="Quote Pattern" transform="translate(-0.001 31.912)">
+		<path id="Shape" d="M9.935,0A9.945,9.945,0,0,1,0-9.935a9.948,9.948,0,0,1,9.358-9.919c.09-.974.023-3.626-2.518-7.314a.7.7,0,0,1,.081-.892c1.04-1.04,1.682-1.695,2.132-2.153.589-.6.857-.872,1.25-1.229a.7.7,0,0,1,.47-.182.7.7,0,0,1,.459.172A26.828,26.828,0,0,1,19.868-9.884C19.451-4.157,15.274,0,9.935,0Z" transform="translate(0.001 -0.288)" fill="#008ccf"/>
+		<path id="Shape-2" data-name="Shape" d="M19.869-9.884h0C19.451-4.157,15.273,0,9.935,0A9.946,9.946,0,0,1,0-9.935a9.948,9.948,0,0,1,9.36-9.919c.09-.973.022-3.624-2.52-7.314a.7.7,0,0,1,.081-.892C7.957-29.1,8.6-29.749,9.048-30.207c.591-.6.861-.878,1.256-1.236a.7.7,0,0,1,.47-.181.7.7,0,0,1,.459.172A26.83,26.83,0,0,1,19.869-9.884Z" transform="translate(24.861 -0.288)" fill="#008ccf"/>
+	  </g>
+	</svg>
+	<h5 class="m-auto">Joe Chernov</h5>
+</div>
+
+<div class="parallax"></div>
+
+
+<!-- parallex endss -->
+<div class="section-services">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-4">
+				<div class="section-header">
+					<span>Our Services</span>
+					<h2>OUR INTENTION TO DIGITAL DETAIL</h2>
+				</div>
+			</div>
+			<div class="col-md-8">
+				<div class="section-caption">
+					<p>Our services span the digital space helping envision the complete online journey of a brand. We study the best and latest of digital marketing practices to give ideas momentum. We ask questions, we do the research and give comprehensive solutions relevant to each business. 
+					</p>
+				</div>
+			</div>
+		</div>
+			<!-- section service 01 -->
+		<div class="row">
+			<div class="col-md-4">
+				<div class="service-wrap accent-pink">
+					<h4>Creative Development</h4>
+					<p>All our creative assets are driven by emotion.From stunning brand identities to visual ads, we design lasting experiences for an audience. </p>
+					<div style="display: flex; justify-content: space-between;">
+						<a href="#" data-toggle="modal" data-target="#surveyModal">learn more <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16.828" viewBox="0 0 16 16.828">
+							<g id="arrow-right" transform="translate(1 1.414)">
+							  <path id="Path" d="M0,.5H14" transform="translate(0 6.5)" fill="#e20060" stroke="#e20060" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="2"/>
+							  <path id="Path-2" data-name="Path" d="M0,0,7,7,0,14" transform="translate(7)" fill="none" stroke="#e20060" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="2"/>
+							</g>
+						  </svg>
+					  </a>
+					  <img src="">
+					</div>
+				</div>
+			</div>
+			<div class="col-md-4">
+				<div class="service-wrap accent-blue">
+					<h4>SMS Communication</h4>
+					<p>In the age of the internet,<br> we don’t underestimate anything.<br> We have modern strategies that <br>can make SMS campaigns highly relevant.</p>
+					<div style="display: flex; justify-content: space-between;">
+						<a href="#" data-toggle="modal" data-target="#surveyModal">learn more <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16.828" viewBox="0 0 16 16.828">
+							<g id="arrow-right" transform="translate(1 1.414)">
+							  <path id="Path" d="M0,.5H14" transform="translate(0 6.5)" fill="#e20060" stroke="#e20060" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="2"/>
+							  <path id="Path-2" data-name="Path" d="M0,0,7,7,0,14" transform="translate(7)" fill="none" stroke="#e20060" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="2"/>
+							</g>
+						  </svg>
+					  </a>
+					  <h1></h1>
+					</div>
+					
+				</div>
+			</div>
+			<div class="col-md-4">
+				<div class="service-wrap accent-green">
+					<h4>Social Media</h4>
+					<p>We listen to the audience and let businesses know how to respond.Our digital calendars help brands <br>schedule time for online conversations, promotions and feedback.</p>
+					<div style="display: flex; justify-content: space-between;">
+						<a href="#" data-toggle="modal" data-target="#surveyModal">learn more <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16.828" viewBox="0 0 16 16.828">
+							<g id="arrow-right" transform="translate(1 1.414)">
+							  <path id="Path" d="M0,.5H14" transform="translate(0 6.5)" fill="#e20060" stroke="#e20060" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="2"/>
+							  <path id="Path-2" data-name="Path" d="M0,0,7,7,0,14" transform="translate(7)" fill="none" stroke="#e20060" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="2"/>
+							</g>
+						  </svg>
+					  </a>
+					  <h1></h1>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- section service 02 -->
+		<div class="row">
+			<div class="col-md-4">
+				<div class="service-wrap accent-lblue">
+					<h4>Web & Mobile App Development</h4>
+					<p>Our tech experts bring people and businesses together online. We create user friendly and mobile responsive websites, ecommerce stores and marketplaces.</p>
+					<div style="display: flex; justify-content: space-between;">
+						<a href="#" data-toggle="modal" data-target="#surveyModal">learn more <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16.828" viewBox="0 0 16 16.828">
+							<g id="arrow-right" transform="translate(1 1.414)">
+							  <path id="Path" d="M0,.5H14" transform="translate(0 6.5)" fill="#e20060" stroke="#e20060" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="2"/>
+							  <path id="Path-2" data-name="Path" d="M0,0,7,7,0,14" transform="translate(7)" fill="none" stroke="#e20060" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="2"/>
+							</g>
+						  </svg>
+					  </a>
+					  <h1></h1>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-4">
+				<div class="service-wrap accent-orange">
+					<h4>Search Engine Optimization</h4>
+					<p>With the right words, brands can win the top view of a search query. <br>Our SEO agency in Dubai offers all the intel on how to rank content for the right people.</p>
+					<div style="display: flex; justify-content: space-between;">
+						<a href="#" data-toggle="modal" data-target="#surveyModal">learn more <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16.828" viewBox="0 0 16 16.828">
+							<g id="arrow-right" transform="translate(1 1.414)">
+							  <path id="Path" d="M0,.5H14" transform="translate(0 6.5)" fill="#e20060" stroke="#e20060" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="2"/>
+							  <path id="Path-2" data-name="Path" d="M0,0,7,7,0,14" transform="translate(7)" fill="none" stroke="#e20060" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="2"/>
+							</g>
+						  </svg>
+					  </a>
+					  <h1></h1>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-4">
+				<div class="service-wrap accent-lgreen">
+					<h4>Lead Generation</h4>
+					<p>We integrate customer acquisition and engagement to generate sales leads for business. Our lead generation specialists extend the reach of businesses to winning sales opportunities.  </p>
+					<div style="display: flex; justify-content: space-between;">
+						<a href="#" data-toggle="modal" data-target="#surveyModal">learn more <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16.828" viewBox="0 0 16 16.828">
+							<g id="arrow-right" transform="translate(1 1.414)">
+							  <path id="Path" d="M0,.5H14" transform="translate(0 6.5)" fill="#e20060" stroke="#e20060" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="2"/>
+							  <path id="Path-2" data-name="Path" d="M0,0,7,7,0,14" transform="translate(7)" fill="none" stroke="#e20060" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="2"/>
+							</g>
+						  </svg>
+					  </a>
+					  <h1></h1>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- service section 03 -->
+		<div class="row">
+			<div class="col-md-12">
+				<div class="service-wrap accent-green">
+					<h4>Whatsapp API for Business</h4>
+					<p>We set up interactive and automated chat services on Whatsapp for businesses. Our online relationship management strategies help activate the right channels and make it work.</p>
+					<a href="#" data-toggle="modal" data-target="#surveyModal">learn more <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16.828" viewBox="0 0 16 16.828">
+						  <g id="arrow-right" transform="translate(1 1.414)">
+						    <path id="Path" d="M0,.5H14" transform="translate(0 6.5)" fill="#e20060" stroke="#e20060" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="2"/>
+						    <path id="Path-2" data-name="Path" d="M0,0,7,7,0,14" transform="translate(7)" fill="none" stroke="#e20060" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="2"/>
+						  </g>
+						</svg>
+					</a>
+				</div>
+			</div>
+		</div>
+
+		<!-- service card end -->
+        <!-- client section starts -->
+		<div class="row">
+			<div class="col-md-4">
+				<div class="section-header">
+					<span>Our Clients</span>
+					<h2>Brands we drive online,
+						Are happy staying online.</h2>
+				</div>
+			</div>
+			<div class="col-md-8">
+				<div class="section-caption">
+					<p>Going by our 10 year track record of serving an esteemed clientele, we continue to thrive because we create all-round brand experiences for the target audience. 
+					</p>
+				</div>
+			</div>
+		</div>
+
+		<!-- client section endss -->
+
+
+		<div class="row">
+			<!-- <div class="col-md-2"> -->
+				<!-- <h6>Our Clients</h6> -->
+			<!-- </div> -->
+			<div class="col-md-12">
+				<div class="client-carousel">
+					<div class="client-item">
+						<img src="images/logo5.png">
+					</div>
+					<div class="client-item">
+						<img src="images/logo6.jpg">
+					</div>
+					<div class="client-item">
+						<img src="images/logo7.png">
+					</div>
+					<div class="client-item">
+						<img src="images/logo8.png">
+					</div>
+					<div class="client-item">
+						<img src="images/logo9.png">
+					</div>
+					<div class="client-item">
+						<img src="images/logo1.jpg">
+					</div>
+					<div class="client-item">
+						<img src="images/logo3.jpg">
+					</div>
+					<div class="client-item">
+						<img src="images/logo4.jpg">
+					</div>
+					<div class="client-item">
+						<img src="images/logo2.png">
+					</div>
+					
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<div class="section-portfolio">
+	<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 494.975 494.975">
+	  <rect id="Pattern" width="350" height="350" rx="40" transform="translate(247.487) rotate(45)" fill="#fff"/>
+	</svg>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-6">
+				<div class="section-header">
+					<span>OUR PORTFOLIO</span>
+					<h2>A WINDOW INTO OUR WORK</h2>
+					<div class="section-caption">
+						<p>We’ve done a lot of experiments over the years and they have worked. Some calculated risks and some delightful surprises, explore our world of marketing strategies, global clients and happy customers.</p>
+					</div>
+				</div>
+				<div class="portfolio-wrap" style="background-image:url(images/port-1.jpg);"></div>
+				<div class="portfolio-wrap" style="background-image:url(images/port-3.jpg);"></div>
+			</div>
+			<div class="col-md-6 pt-5">
+				<div class="portfolio-wrap" style="background-image:url(images/port-2.png);"></div>
+				<div class="portfolio-wrap" style="background-image:url(images/port-5.jpg);"></div>
+				<div class="portfolio-wrap" style="background-image:url(images/port-4.jpg);"></div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- porfolio images -->
+<div class="row">
+	<div class="col-md-3">
+		
+			<div class="section-header" style="margin: 100px;">
+				<h2>CASE STUDIES</h2>
+			</div>
+	
+	</div>
+	<div class="col-md-9">
+		<div class="projects-carousel">
+			<div class="projects-item zoom">
+				<img src="images/AL-DHANNAH-CS.jpg" alt="Wisoft Solutions" class="max-100"> 
+			
+			</div>
+			<div class="projects-item zoom">
+				<img src="images/APP-PAPERLINE.jpg" alt="Wisoft Solutions" class="max-100"> 
+			</div>
+			<div class="projects-item zoom">
+		
+				<img src="images/APP-sinarmas.jpg" alt="Wisoft Solutions" class="max-100"> 
+			</div>
+			<div class="projects-item zoom">
+			
+				<img src="images/ISUZU CS.jpg" alt="Wisoft Solutions" class="max-100"> 
+			</div>
+			<div class="projects-item zoom">
+				
+				<img src="images/RAKMHSU-CS.jpg" alt="Wisoft Solutions" class="max-100"> 
+			</div>
+			<div class="projects-item zoom">
+				
+				<img src="images/SINARLINE-CS.jpg" alt="Wisoft Solutions" class="max-100"> 
+			</div>
+			<div class="projects-item zoom">
+				
+				<img src="images/WEHBE-CS.jpg" alt="Wisoft Solutions" class="max-100"> 
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- portfolio imgs ends -->
+<div class="section-testimonial">
+	<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 494.975 494.975">
+	  <rect id="Pattern" width="350" height="350" rx="40" transform="translate(247.487) rotate(45)" fill="#E20060"/>
+	</svg>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-5">
+				<div class="section-header">
+					<span>OUR INSPIRATION</span>
+					<h2>WINNING WORDS FROM OUR LEADERS</h2>
+				</div>
+			</div>
+			<div class="col-md-7">
+				<div class="section-caption">
+					<!-- <p>There are somethings money can’t buy! Here’s what our clients have to say about our passion, expertise, effectiveness and efficiency in delivering stellar, high-performance websites.</p> -->
+					<p>We love to do what we do because of the people who believe in us. We are thankful for all the opportunities to develop Wisoft as a trusted digital marketing brand.</p>
+				</div>
+			</div>
+		</div>
+		<!-- remove -->
+		<!-- <div class="testimonial-carousel">
+			<div class="testimonial-item">
+				<div class="row">
+					<div class="col-md-5">
+						<img src="images/test-img-1.jpg" class="max-100">
+					</div>
+					<div class="col-md-7">
+						<svg xmlns="http://www.w3.org/2000/svg" width="44.799" height="31.624" viewBox="0 0 44.799 31.624">
+						  <g id="Quote_Pattern" data-name="Quote Pattern" transform="translate(-0.001 31.912)">
+						    <path id="Shape" d="M9.935,0A9.945,9.945,0,0,1,0-9.935a9.948,9.948,0,0,1,9.358-9.919c.09-.974.023-3.626-2.518-7.314a.7.7,0,0,1,.081-.892c1.04-1.04,1.682-1.695,2.132-2.153.589-.6.857-.872,1.25-1.229a.7.7,0,0,1,.47-.182.7.7,0,0,1,.459.172A26.828,26.828,0,0,1,19.868-9.884C19.451-4.157,15.274,0,9.935,0Z" transform="translate(0.001 -0.288)" fill="#008ccf"/>
+						    <path id="Shape-2" data-name="Shape" d="M19.869-9.884h0C19.451-4.157,15.273,0,9.935,0A9.946,9.946,0,0,1,0-9.935a9.948,9.948,0,0,1,9.36-9.919c.09-.973.022-3.624-2.52-7.314a.7.7,0,0,1,.081-.892C7.957-29.1,8.6-29.749,9.048-30.207c.591-.6.861-.878,1.256-1.236a.7.7,0,0,1,.47-.181.7.7,0,0,1,.459.172A26.83,26.83,0,0,1,19.869-9.884Z" transform="translate(24.861 -0.288)" fill="#008ccf"/>
+						  </g>
+						</svg>
+						<p>We decided to engage Wisoft Solutions to develop our website and later manage our SEO activities due to the amount of detail and enthusiasm showcased by them from pitch until delivery stage. The Wisoft team has been prompt and knowledgeable to attend to all our queries and requests while also providing counsel on best practices related to website development and management. We would definitely recommend them to businesses looking at initiating or expanding their online presence. All the best!</p>
+						<h5>Jack Brown - MCR President</h5>
+					</div>
+				</div>
+			</div>
+			<div class="testimonial-item">
+				<div class="row">
+					<div class="col-md-5">
+						<img src="images/test-img-1.jpg" class="max-100">
+					</div>
+					<div class="col-md-7">
+						<svg xmlns="http://www.w3.org/2000/svg" width="44.799" height="31.624" viewBox="0 0 44.799 31.624">
+						  <g id="Quote_Pattern" data-name="Quote Pattern" transform="translate(-0.001 31.912)">
+						    <path id="Shape" d="M9.935,0A9.945,9.945,0,0,1,0-9.935a9.948,9.948,0,0,1,9.358-9.919c.09-.974.023-3.626-2.518-7.314a.7.7,0,0,1,.081-.892c1.04-1.04,1.682-1.695,2.132-2.153.589-.6.857-.872,1.25-1.229a.7.7,0,0,1,.47-.182.7.7,0,0,1,.459.172A26.828,26.828,0,0,1,19.868-9.884C19.451-4.157,15.274,0,9.935,0Z" transform="translate(0.001 -0.288)" fill="#008ccf"/>
+						    <path id="Shape-2" data-name="Shape" d="M19.869-9.884h0C19.451-4.157,15.273,0,9.935,0A9.946,9.946,0,0,1,0-9.935a9.948,9.948,0,0,1,9.36-9.919c.09-.973.022-3.624-2.52-7.314a.7.7,0,0,1,.081-.892C7.957-29.1,8.6-29.749,9.048-30.207c.591-.6.861-.878,1.256-1.236a.7.7,0,0,1,.47-.181.7.7,0,0,1,.459.172A26.83,26.83,0,0,1,19.869-9.884Z" transform="translate(24.861 -0.288)" fill="#008ccf"/>
+						  </g>
+						</svg>
+						<p>We decided to engage Wisoft Solutions to develop our website and later manage our SEO activities due to the amount of detail and enthusiasm showcased by them from pitch until delivery stage. The Wisoft team has been prompt and knowledgeable to attend to all our queries and requests while also providing counsel on best practices related to website development and management. We would definitely recommend them to businesses looking at initiating or expanding their online presence. All the best!</p>
+						<h5>Jack Brown - MCR President</h5>
+					</div>
+				</div>
+			</div>
+		</div> -->
+		<!-- remov -->
+	</div>
+</div>
+
+<!-- youtibe videos starts -->
+<div class="section-services">
+	<div class="container">
+		<!-- <div class="row">
+			<div class="col-md-4">
+				<div class="section-header">
+					<span>Our Services</span>
+					<h2>OUR INTENTION TO DIGITAL DETAIL</h2>
+				</div>
+			</div>
+			<div class="col-md-8">
+				<div class="section-caption">
+					<p>Our services span the digital space helping envision the complete online journey of a brand. We study the best and latest of digital marketing practices to give ideas momentum. We ask questions, we do the research and give comprehensive solutions relevant to each business. 
+					</p>
+				</div>
+			</div>
+		</div> -->
+			<!-- section service 01 -->
+		<div class="row" class="pt-20 text-center">
+			<div class="col-md-6" >
+				<div class="">
+					<iframe width="380" height="220" src="https://www.youtube.com/embed/OB7FMIHZhmI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+				</div>
+			</div>
+			<div class="col-md-6 col-12">
+				<div class="">
+					<!-- <h4>Web & Mobile App Development</h4> -->
+					<!-- <p>Our tech experts bring people and businesses together online. We create user friendly and mobile responsive websites, ecommerce stores and marketplaces.</p> -->
+					<iframe width="380" height="220" src="https://www.youtube.com/embed/jzLSmffTG_4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+				</div>
+			</div>
+			<div class="col-md-6 col-12">
+				<div class="">
+					<iframe width="380" height="220" src="https://www.youtube.com/embed/FE1I339qBDc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+				</div>
+			</div>
+			<div class="col-md-6 col-12">
+				<div class="">
+					<iframe width="380" height="220" src="https://www.youtube.com/embed/IWgsamEz4zo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+				</div>
+			</div>
+		</div>
+	
+	</div>
+</div>
+
+<!-- youtube videos endsss -->
+
+
+
+
+
+
+<div class="prefooter">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-2"></div>
+			<div class="col-md-6">
+				<h2>PARTNER WITH US TO CREATE YOUR AMAZING PROJECT</h2>
+				<p>Don’t let challenges bring you down! Get online with our special packages and personalized plans.</p>
+			</div>
+			<div class="col-md-3">
+				<div class="btn-1">
+					<a href="#" data-toggle="modal" data-target="#surveyModal">Let's Talk</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<footer class="footer">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-4">
+				<a href="index.html" class="footer-logo">
+					<img alt="" src="images/footer-logo.svg">
+				</a>
+			</div>
+			<div class="col-md-4">
+				<ul class="social-links">
+                    <li>
+					    <a href="" target="_blank"> <i class="fab fa-instagram"></i></a>
+					</li>
+					<li>
+					    <a href="" target="_blank"> <i class="fab fa-twitter"></i></a>
+					</li>
+					<li>
+					    <a href="" target="_blank"><i class="fab fa-facebook-f"></i></a>
+					</li>
+					<li>
+					    <a href="" target="_blank"> <i class="fab fa-linkedin"></i></a>
+					</li>
+					<li>
+					    <a href="" target="_blank"> <i class="fab fa-youtube"></i></a>
+					</li>
+                </ul>
+			</div>
+			<div class="col-md-4">
+				<ul class="contact-details">
+                    <li>
+					    <a href="tel:800 7267" target="_blank"><i class="fas fa-phone"></i>  +971 4 321 0710</a>
+					</li>
+					<li>
+					    <a href="mailto:contact@wisoftsolutions.com" target="_blank"><i class="far fa-envelope"></i> contact@wisoftsolutions.com</a>
+					</li>
+                </ul>
+			</div>
+		</div>
+	</div>
+	<div class="copyright">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-8">
+					<p>©copyright Wisoft Solutions 2023 - All Right Reserved</p>
+				</div>
+				<div class="col-md-4">
+					<a href="#" data-toggle="modal" data-target="#privacyModal">Privacy Policy</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<a data-toggle="modal" data-target="#surveyModal" class="survey-btn">Let's Talk</a>
+</footer>
+ <!-- Customer Survey Modal -->
+<div id="surveyModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+		<h2>Let's Talk</h2>
+      </div>
+      <div class="modal-body">
+        <!-- <div class="form-wrapper">
+			
+			<script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/v2.js"></script>
+			<script>
+			  hbspt.forms.create({
+				region: "na1",
+				portalId: "3795192",
+				formId: "d11df3c4-2886-4490-928e-9af60bfe0a42"
+			});
+			</script>
+		</div> -->
+	
+
+		<!-- form -->
+		<div class="form-wrapper">
+			<div id='crmWebToEntityForm' class='zcwf_lblLeft crmWebToEntityForm' style='background-color: white;color: black;max-width: 600px;'>
+				<meta name='viewport' content='width=device-width, initial-scale=1.0'>
+				 <META HTTP-EQUIV ='content-type' CONTENT='text/html;charset=UTF-8'>
+				 <script src='https://www.google.com/recaptcha/api.js' async defer></script>
+			  <form action='https://crm.zoho.com/crm/WebToLeadForm' name=WebToLeads4937518000014727001 method='POST' onSubmit='javascript:document.charset="UTF-8"; return checkMandatory4937518000014727001()' accept-charset='UTF-8'>
+			   <input type='text' style='display:none;' name='xnQsjsdp' value='1ac4fed805e21d61e630fbc1fde8d510616222c21166f28a676570beb5cbc798'></input> 
+			   <input type='hidden' name='zc_gad' id='zc_gad' value=''></input> 
+			   <input type='text' style='display:none;' name='xmIwtLD' value='4072df857871ae8f9f4ecf7f5b63da4165fefed39553a3837dc9e91c9701d7c4'></input> 
+			   <input type='text'  style='display:none;' name='actionType' value='TGVhZHM='></input>
+			   <input type='text' style='display:none;' name='returnURL' value='https&#x3a;&#x2f;&#x2f;https://www.wisoftsolutions.com'> </input>
+				   <!-- Do not remove this code. -->
+				   <input type='text' style='display:none;' id='ldeskuid' name='ldeskuid'></input>
+				   <input type='text' style='display:none;' id='LDTuvid' name='LDTuvid'></input>
+				   <!-- Do not remove this code. -->
+			
+				<div class='zcwf_title' style='max-width: 600px;color: rgb(63, 63, 201);'>FREE CONSULTATION</div>
+				<!-- bootsrp -->
+				<div class="row">
+					<div class='zcwf_row small-dvc'><div class='zcwf_col_lab' style='font-size:12px; font-family: Arial;'><label for='First_Name'><span style='color:red;'></span></label></div><div class='zcwf_col_fld'>
+						<input type='text' id='First_Name'class="form-control" name='First Name' maxlength='40' placeholder="First Name*"></input><div class='zcwf_col_help'></div></div></div>
+					<div class='zcwf_row small-dvc'><div class='zcwf_col_lab' style='font-size:12px; font-family: Arial;'><label for='Last_Name'><span style='color:red;'></span></label></div><div class='zcwf_col_fld'>
+						<input type='text' id='Last_Name' name='Last Name' class="form-control" maxlength='80' placeholder="Last Name*"></input><div class='zcwf_col_help'></div></div></div>
+				</div>
+				<!-- --- -->
+				<div class="row">
+					<div class='zcwf_row small-dvc'><div class='zcwf_col_lab' style='font-size:12px; font-family: Arial;'><label for='Email'><span style='color:red;'></span></label></div><div class='zcwf_col_fld'><input type='text' class="form-control" ftype='email' id='Email' name='Email' maxlength='100' placeholder="Email*"></input><div class='zcwf_col_help'></div></div></div>
+					<div class='zcwf_row small-dvc'><div class='zcwf_col_lab' style='font-size:12px; font-family: Arial;'><label for='Phone'><span style='color:red;'></span></label></div><div class='zcwf_col_fld'><input type='text' id='Phone' name='Phone' class="form-control" maxlength='30' placeholder="Phone*"></input><div class='zcwf_col_help'></div></div></div>
+				</div>
+				<!-- ---- -->
+				<div class="row">
+					<div class='zcwf_row wfrm_fld_dpNn'><div class='zcwf_col_lab' style='font-size:12px; font-family: Arial;'>
+						<label for='Country'>Country</label></div><div class='zcwf_col_fld'>
+							<input type='text' id='Country' name='Country' maxlength='100' placeholder="Country" value='null'>Country</input>
+							<div class='zcwf_col_help'></div>
+						</div>
+						</div>
+						<div class='zcwf_row small-dvc'><div class='zcwf_col_lab' style='font-size:12px; font-family: Arial;'><label for='Country'><span style='color:red;'></span></label></div><div class='zcwf_col_fld'><input type='text'class="form-control" id='Company' name='Company'  maxlength='200' placeholder="Country"></input><div class='zcwf_col_help'></div></div></div>
+						<div class='zcwf_row small-dvc'><div class='zcwf_col_lab' style='font-size:12px; font-family: Arial;'><label for='Company'><span style='color:red;'></span></label></div><div class='zcwf_col_fld'><input type='text'class="form-control" id='Company' name='Company'  maxlength='200' placeholder="Company"></input><div class='zcwf_col_help'></div></div></div>
+				</div>
+				
+					<div class='zcwf_row wfrm_fld_dpNn'><div class='zcwf_col_lab' style='font-size:12px; font-family: Arial;'><label for='Lead_Source'>Lead Source</label></div><div class='zcwf_col_fld'><select class='zcwf_col_fld_slt' id='Lead_Source' name='Lead Source'  >
+						<option value='-None-'>-None-</option>
+						<option value='Google'>Google</option>
+						<option value='Facebook'>Facebook</option>
+						<option value='Instagram'>Instagram</option>
+						<option value='Twitter'>Twitter</option>
+						<option value='LinkedIn'>LinkedIn</option>
+					<option selected value='Webform'>Webform</option>
+						<option value='Web&#x20;Chat'>Web Chat</option>
+						<option value='Outdoor'>Outdoor</option>
+						<option value='Sortlist'>Sortlist</option>
+						<option value='BNI&#x20;Chapters'>BNI Chapters</option>
+						<option value='BNI&#x20;Lead'>BNI Lead</option>
+						<option value='Refferals'>Refferals</option>
+						<option value='Telecall'>Telecall</option>
+						<option value='Sales&#x20;Email&#x20;Alias'>Sales Email Alias</option>
+						<option value='Outdoor-Hashmi'>Outdoor-Hashmi</option>
+						<option value='Outdoor&#x20;-&#x20;Maribeth'>Outdoor - Maribeth</option>
+					</select><div class='zcwf_col_help'></div></div></div>
+				
+		
+			 
+			  
+			  <div class='zcwf_row'><div class='zcwf_col_lab' style='font-size:12px; font-family: Arial;'><label for='LEADCF23'>Services*</label></div><div class='zcwf_col_fld'><select class='zcwf_col_fld_slt' id='LEADCF23' name='LEADCF23' multiple >
+						  <option value='Lead&#x20;Generation'>Lead Generation</option>
+						  <option value='Search&#x20;Engine&#x20;Optimization'>Search Engine Optimization</option>
+						  <option value='Social&#x20;Media&#x20;Management'>Social Media Management</option>
+						  <option value='SMS&#x20;Communication'>SMS Communication</option>
+						  <option value='Web&#x20;Design&#x20;and&#x20;Development'>Web Design and Development</option>
+						  <option value='Custom&#x20;App&#x20;Development'>Custom App Development</option>
+						  <option value='Marketing&#x20;Automation'>Marketing Automation</option>
+						  <option value='Pay&#x20;Per&#x20;Click&#x20;Advertising'>Pay Per Click Advertising</option>
+						  <option value='E-Commerce&#x20;Development'>E-Commerce Development</option>
+						  <option value='E-Commerce&#x20;Development'>Content Writing</option>
+						  <option value='WhatsApp&#x20;for&#x20;Business&#x20;Solution'>WhatsApp API for Business</option>
+						  <option value='Other'>Other</option></select><div class='zcwf_col_help'> <span title='To select multiple press CTRL&#x2f;CMD &#x2b; Click' style='cursor: pointer; width: 16px; height: 16px; display: inline-block; background: #fff; border: 1px solid #c0c6cc; color: #c1c1c1; text-align: center; font-size: 11px; line-height: 16px; font-weight: bold; border-radius: 50%;' onclick='tooltipShow4937518000014727001(this)'>?</span><div class='zcwf_tooltip_over' style='display: none;'><span class='zcwf_tooltip_ctn'>To select multiple press CTRL&#x2f;CMD &#x2b; Click</span></div></div></div></div>
+			  <div class='zcwf_row'><div class='zcwf_col_lab' style='font-size:12px; font-family: Arial;'>
+				<label for='Description'><span style='color:red;'></span></label>
+			</div>
+			<label for='Description'><span style='color:red;'></span></label>
+			<div class='zcwf_col_fld'><textarea id='Description' name='Description' placeholder="Project Details"></textarea><div class='zcwf_col_help'></div></div>
+			
+		</div>
+		<div class='zcwf_row'> 
+			<div class='zcwf_col_lab'></div>
+			<div class='zcwf_col_fld'>
+				<!-- <div class='g-recaptcha' data-sitekey='6LfQKiEiAAAAACgo4NlhQ-QA-1yAttMvBqEVq5AV' data-theme='light' data-callback='rccallback4937518000014727001' captcha-verified='false' id='recap4937518000014727001'></div> -->
+				<!-- <div  id='recapErr4937518000014727001' style='font-size:12px;color:red;visibility:hidden;'>Captcha validation failed. If you are not a robot then please try again.</div> -->
+			</div></div>
+				<div class='zcwf_row'>
+					<div class='zcwf_col_lab'></div>
+					<div class='zcwf_col_fld'>
+					<input type='submit' id='formsubmit' class='zcwf_button btn btn-primary'  value='Submit' title='Submit'>
+					<input type='reset' class='zcwf_button btn btn-primary' name='reset' value='Reset' title='Reset'></div>
+				</div>
+			</div>
+		</div>
+		<!-- form -->
+      </div>
+    </div>
+  </div>
+</div>
+
+ <!-- Privacy Modal -->
+<div id="privacyModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+		<h2>Privacy Policy</h2>
+      </div>
+      <div class="modal-body">
+		<p>Your personal information (Name, Email, Phone, Message) submitted will not be sold, shared or rented to others.</p>
+		<p>We use this information to send updates about our company and projects and contact you if requested or find it necessary.</p>
+		<p>You may opt out of receiving our communication by calling us on any of our above mentioned contact numbers.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="js/jquery-3.5.1.min.js"></script>
+<script src="js/bootstrap.js"></script>
+<script src="js/slick.js"></script>
+<script src="js/custom.js"></script>
+<script type="text/javaScript" src="js/jquery.fancybox.js"></script>
+
+<script>
+    function validateEmail4937518000014727001()
+    {
+        var form = document.forms['WebToLeads4937518000014727001'];
+        var emailFld = form.querySelectorAll('[ftype=email]');
+        var i;
+        for (i = 0; i < emailFld.length; i++)
+        {
+            var emailVal = emailFld[i].value;
+            if((emailVal.replace(/^\s+|\s+$/g, '')).length!=0 )
+            {
+                var atpos=emailVal.indexOf('@');
+                var dotpos=emailVal.lastIndexOf('.');
+                if (atpos<1 || dotpos<atpos+2 || dotpos+2>=emailVal.length)
+                {
+                    alert('Please enter a valid email address. ');
+                    emailFld[i].focus();
+                    return false;
+                }
+            }
+        }
+        return true;
+    }
+
+    function checkMandatory4937518000014727001() {
+        var mndFileds = new Array('Company','First Name','Last Name','Email','Phone','Description');
+        var fldLangVal = new Array('Company','First\x20Name','Last\x20Name','Email','Phone','Project\x20Details');
+        for(i=0;i<mndFileds.length;i++) {
+            var fieldObj=document.forms['WebToLeads4937518000014727001'][mndFileds[i]];
+            if(fieldObj) {
+                if (((fieldObj.value).replace(/^\s+|\s+$/g, '')).length==0) {
+                    if(fieldObj.type =='file')
+                    {
+                        alert('Please select a file to upload.');
+                        fieldObj.focus();
+                        return false;
+                    }
+                    alert(fldLangVal[i] +' cannot be empty.');
+                    fieldObj.focus();
+                    return false;
+                }  else if(fieldObj.nodeName=='SELECT') {
+                    if(fieldObj.options[fieldObj.selectedIndex].value=='-None-') {
+                        alert(fldLangVal[i] +' cannot be none.');
+                        fieldObj.focus();
+                        return false;
+                    }
+                } else if(fieldObj.type =='checkbox'){
+                    if(fieldObj.checked == false){
+                        alert('Please accept  '+fldLangVal[i]);
+                        fieldObj.focus();
+                        return false;
+                    }
+                }
+                try {
+                    if(fieldObj.name == 'Last Name') {
+                        name = fieldObj.value;
+                    }
+                } catch (e) {}
+            }
+        }
+        trackVisitor4937518000014727001();
+        if(!validateEmail4937518000014727001()){return false;}
+        document.querySelector('.crmWebToEntityForm .formsubmit').setAttribute('disabled', true);
+    }
+
+    function tooltipShow4937518000014727001(el){
+        var tooltip = el.nextElementSibling;
+        var tooltipDisplay = tooltip.style.display;
+        if(tooltipDisplay == 'none'){
+            var allTooltip = document.getElementsByClassName('zcwf_tooltip_over');
+            for(i=0; i<allTooltip.length; i++){
+                allTooltip[i].style.display='none';
+            }
+            tooltip.style.display = 'block';
+        }else{
+            tooltip.style.display='none';
+        }
+    }
+</script><script type='text/javascript' id='VisitorTracking'>var $zoho= $zoho || {};$zoho.salesiq = $zoho.salesiq || {widgetcode:'e363f908eae19421f66f7f4a6260531facb5c20d0cfe9f648a861f090f0e9352bfd7e36d3241c3ef7132ad6806e2d2ff', values:{},ready:function(){}};var d=document;s=d.createElement('script');s.type='text/javascript';s.id='zsiqscript';s.defer=true;s.src='https://salesiq.zoho.com/widget';t=d.getElementsByTagName('script')[0];t.parentNode.insertBefore(s,t);function trackVisitor4937518000014727001(){try{if($zoho){var LDTuvidObj = document.forms['WebToLeads4937518000014727001']['LDTuvid'];if(LDTuvidObj){LDTuvidObj.value = $zoho.salesiq.visitor.uniqueid();}var firstnameObj = document.forms['WebToLeads4937518000014727001']['First Name'];if(firstnameObj){name = firstnameObj.value +' '+name;}$zoho.salesiq.visitor.name(name);var emailObj = document.forms['WebToLeads4937518000014727001']['Email'];if(emailObj){email = emailObj.value;$zoho.salesiq.visitor.email(email);}}} catch(e){}}</script>
+<!-- Do not remove this --- Analytics Tracking code starts --><script id='wf_anal' src='https://crm.zohopublic.com/crm/WebFormAnalyticsServeServlet?rid=4072df857871ae8f9f4ecf7f5b63da4165fefed39553a3837dc9e91c9701d7c4gid1ac4fed805e21d61e630fbc1fde8d510616222c21166f28a676570beb5cbc798gid885e3c1045bd9bdcc91bdf30f82b5696gid14f4ec16431e0686150daa43f3210513&tw=61690b96c1d0471b638f31426f38e68aa67fb7ed6da86f32dc10ad817fe55a0a'></script><!-- Do not remove this --- Analytics Tracking code ends. --></form>
+
+
+</body>
+</html>

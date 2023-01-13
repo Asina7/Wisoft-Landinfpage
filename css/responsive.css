@@ -1,0 +1,171 @@
+@media only screen and (max-width: 1500px){
+	.form-wrapper form input.hs-button {
+		margin: 10px 0 0;
+	}
+	.form-wrapper form input, .form-wrapper form select {
+		padding: 9px 12px;
+		margin: 0 0 10px;
+	}
+	.form-wrapper form fieldset.form-columns-2 select {
+		height: 44px;
+	}
+}
+@media only screen and (max-width: 1024px){
+	.service-wrap h4 {
+		padding: 0 30px 0 0;
+	}
+	.testimonial-item p {
+		margin: 30px 0 0;
+	}
+	.section-testimonial svg {
+		width: 200px;
+		height: 200px;
+		right: -100px;
+		top: 20%;
+	}
+	.btn-1 a {
+		font-size: 24px;
+		padding: 3px 25px;
+	}
+	.prefooter .col-md-2 {
+		display: none;
+	}
+	.prefooter {
+		padding: 50px 0;
+		left: 0;
+		width: 100%;
+		border-top-right-radius: 0;
+		border-bottom-right-radius: 0;
+	}
+	.section-testimonial .section-caption p {
+		font-size: 16px;
+	}
+	.section-home-banner {
+		min-height: unset;
+	}
+}
+@media only screen and (max-width: 800px){
+	.section-about-us svg {
+		width: 300px;
+		height: 300px;
+		left: -180px;
+	}
+	.testimonial-item svg,
+	.testimonial-item p{
+		margin:0;
+	}
+	.testimonial-item h5{
+		margin:10px 0;
+	}
+	ul.slick-dots {
+		margin: 20px 0 0;
+		position: unset;
+		text-align: center;
+	}
+	.prefooter{
+		position:unset;
+		padding: 10px 0;
+	}
+	.footer {
+		padding: 0;
+	}
+	body h1{
+		font-size: 34px;
+	}
+	body h2{
+		font-size: 32px;
+	}
+	body h3{
+		font-size: 26px;
+	}
+	body h4{
+		font-size: 21px;
+	}
+	.btn-1 a {
+		font-size: 20px;
+	}
+	a.footer-logo {
+		display: block;
+		text-align: left;
+		margin: 20px 0;
+	}
+	.footer-logo img {
+		max-width: 150px !important;
+	}
+	.section-testimonial svg {
+		right: -130px;
+	}
+	ul.social-links {
+		margin: 30px 0;
+		display: block;
+		height: auto;
+	}
+	ul.social-links li {
+		margin: 0 2px;
+	}
+	ul.social-links li a {
+		width: 29px;
+		height: 29px;
+		line-height: 28px;
+	}
+	.footer ul.contact-details {
+		padding: 10px 0px;
+	}
+	.footer ul.contact-details li a {
+		font-size: 12px;
+		padding: 5px 0;
+	}
+}
+@media only screen and (max-width: 767px){
+	.section-home-banner h1 {
+		margin: 0px 0 0;
+	}
+	.section-home-banner h1 br{
+		display:none;
+	}
+	.section-home-banner img,
+	.section-about-us svg,
+	.dotted-pattern:before,
+	.dotted-pattern:after,
+	.section-portfolio:before,
+	.section-testimonial svg{
+		display:none;
+	}
+	.section-caption,
+	.section-about-us .section-caption	{
+		margin: 0;
+	}
+	.client-item img {
+		margin: 0 auto;
+	}
+	.section-portfolio {
+		padding: 30px 0;
+	}
+	 .testimonial-item p {
+		margin: 20px 0 0;
+	}
+	.prefooter{
+		text-align:center;
+	}
+	a.footer-logo {
+		text-align: center;
+		margin: 20px 0 0;
+	}
+	.footer ul.contact-details,
+	.copyright	{
+		text-align: center;
+	}
+}
+
+/* form */
+@media only screen and (min-width:375px) and (max-width:700px){
+	.small-dv{
+		width: 170px !important;
+	}
+}
+/* side form */
+@media only screen and (min-width:375px) and (max-width:700px){
+	.small-dvc{
+		width: 170px !important;
+	}
+}
